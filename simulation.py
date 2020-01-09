@@ -39,3 +39,23 @@ for i in range(0, len(time_array)-1):
   temp_b[i] = ((S*L(time_array[i])*(1-0.5))/(sigma))**(0.25) - 273
   
 return alpha_w, alpha_b, alpha_g, temp_p, temp_b
+
+a, b, c, d, e = Daisyworld(dt, time, init_g, init_w, init_b)
+
+plt.figure(figsize = (10,8)) 
+plt.plot(L(time), a, 'gray', label = 'White Daisies')
+7
+plt.plot(L(time), b, 'black', label = 'Black Daisies') 
+plt.plot(L(time), c, 'brown', label = 'Uncovered Ground') 
+plt.title('Covered/Uncovered Land vs. Solar Luminosity', fontsize = 17) 
+plt.xlabel('Solar Luminosity', fontsize = 17) 
+plt.ylabel('Fraction of World Covered', fontsize = 17) 
+plt.legend(fontsize = 15.5)
+
+plt.figure(figsize = (10,8)) 
+plt.plot(L(time)[0:-1], d[0:-1], 'red', label = 'Daisyworld') 
+plt.plot(L(time)[0:-1], e[0:-1], 'b--', label = 'Barren World') 
+plt.title('Mean Planetary Temperature vs. Solar Luminosity', fontsize = 17) 
+plt.xlabel('Solar Luminosity', fontsize = 17) 
+plt.ylabel('$T_p$ [$^\circ$C]', fontsize = 17) 
+plt.legend(fontsize = 15.5) 
