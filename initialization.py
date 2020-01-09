@@ -1,6 +1,9 @@
 import numpy as np 
 import matplotlib.pyplot as plt
 
+plt.rc('xtick',labelsize = 15) 
+plt.rc('ytick',labelsize = 15) # for fontsize of plot axes ticks
+
 ############################## defining initial conditions
 
 init_g = 1 
